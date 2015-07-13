@@ -1,6 +1,6 @@
 <?php
 
-require_once 'include/AltoRouter.php';
+require_once 'include/AltoRouter/AltoRouter.php';
 
 $router = new AltoRouter();
 $router->setBasePath('portfolio/');
