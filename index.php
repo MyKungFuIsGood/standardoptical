@@ -14,12 +14,12 @@ $viewPath = 'views/';
 
 // Router matches
 //---
-$router->map('GET', '/', $viewPath . 'home.php', 'home');
+$router->map('GET|POST', '/', $viewPath . 'home.php', 'home');
 // Auth
-$router->map('GET', '/login', $viewPath . 'auth/login.php', 'login');
-$router->map('GET', '/login/[*:error]', $viewPath . 'auth/login.php', 'login-error');
-$router->map('GET', '/logout', $viewPath . 'auth/logout.php', 'logout');
-$router->map('GET', '/auth', $viewPath . 'auth/auth.php', 'auth');
+$router->map('GET|POST', '/login', $viewPath . 'auth/login.php', 'login');
+$router->map('GET|POST', '/login/[*:error]', $viewPath . 'auth/login.php', 'login-error');
+$router->map('GET|POST', '/logout', $viewPath . 'auth/logout.php', 'logout');
+$router->map('GET|POST', '/auth', $viewPath . 'auth/auth.php', 'auth');
 
 $result = $viewPath . '404.php';
 
@@ -31,7 +31,7 @@ if($match) {
 	}
 
 	$result = $match['target'];
-	
+
 } else {
 	header('HTTP/1.0 404 Not Found');
 }

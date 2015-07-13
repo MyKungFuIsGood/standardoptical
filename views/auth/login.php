@@ -4,7 +4,7 @@ $error = (isset($match['params']['error']));
 
 <div class="container">
 	<div class="row">
-		<form class="login col s6 offset-s3" action="auth" method="post">
+		<form class="login col s6 offset-s3" action="/portfolio/auth" method="post">
 			<div class="row">
 				<div class="input-field col s12">
 					<input id="auth" type="text" class="validate" name="auth" require="required">

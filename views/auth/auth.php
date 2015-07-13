@@ -1,10 +1,12 @@
-hihihihihi
+Hello world
+
 <?php
+
 session_start();
 
 if(!isset($_POST['auth'])){
-    header('Location: login/error');
-    exit;
+	header('Location: login/error');
+	exit;
 }
 
 $auth = $_POST['auth'];
@@ -16,11 +18,11 @@ $auth = $_POST['auth'];
 //     exit;
 // }
 
-// $pass = 'asdf';
-// if($auth !== $pass){
-//     header('Location: login/error');
-//     exit;
-// }
+$pass = 'lovecomm';
+if($auth !== $pass){
+	header('Location: login/error');
+	exit;
+}
 
 $_SESSION['auth'] = '1';
-header('Location: /');
+header('Location: /portfolio');

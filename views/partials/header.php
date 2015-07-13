@@ -2,7 +2,7 @@
 	<div class="container">
 		<img class="responsive-img logo" src="assets/images/logo.png">
 
-		<form class="logout" action="portfolio/login" method="post">
+		<form class="logout" action="/portfolio/logout" method="post">
 			<div class="row">
 				<div class="input-field hide">
 					<input id="logout" type="text" class="validate">
