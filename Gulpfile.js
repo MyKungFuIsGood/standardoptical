@@ -16,7 +16,7 @@ var dirs = {
 
 var paths = {
 	sass: [
-		dirs.src + '/scss/**/*.scss'
+		dirs.src + '/sass/**/*.scss'
 	],
 	script: [
 		dirs.src + '/js/*.js',

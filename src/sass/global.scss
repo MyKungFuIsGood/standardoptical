@@ -1,6 +1,58 @@
-p {
-  width: 100px;
-  height: 100px;
-  background-color: #26a69a;
-  margin: 20px auto;
+* {
+	outline: none !important;
 }
+
+body {
+	background-color: $primary-color;
+}
+
+header {
+	background-color: #fff;
+	padding: $grid-gutter;
+
+	.logo {
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+main {
+	padding-top: 15vh;
+}
+
+form.login {
+	padding: $grid-gutter !important;
+	background-color: #fff;
+	border-radius: 5px;
+	@extend .z-depth-1;
+
+	// Raised Button
+	.btn {
+		color: $button-color-raised;
+		background-color: $primary-color;
+
+		&:hover {
+			background-color: lighten($primary-color, 5%);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+p {
+	width: 100px;
+	height: 100px;
+	background-color: #26a69a;
+	margin: 20px auto;
+}
+

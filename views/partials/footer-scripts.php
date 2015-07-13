@@ -1,10 +1,10 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script>(window.jQuery || document.write('<script src="assets/js/plugins/jquery.min.js"><\/script>'));</script>
+<script>(window.jQuery || document.write('<script src="/portfolio/assets/js/plugins/jquery.min.js"><\/script>'));</script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-<script>($.fn.slider || document.write('<script src="assets/js/plugins/materialize.min.js"><\/script>'));</script>
+<script>($.fn.slider || document.write('<script src="/portfolio/assets/js/plugins/materialize.min.js"><\/script>'));</script>
 
-<script src="assets/js/main.min.js"></script>
+<script src="/portfolio/assets/js/main.min.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
@@ -20,3 +20,6 @@
 	// Use live reload if the tld contains local 
 	( location.host.split('.').pop().indexOf('local') ) || document.write('<script src="http://localhost:23456/livereload.js"><\/script>')
 </script>
+
+<!-- odd this needs to be the last thing -->
+<!-- <base href="http://standardoptical.local/portfolio"> -->

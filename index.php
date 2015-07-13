@@ -1,31 +1,43 @@
 <?php
 
+session_start();
+
 require_once 'include/AltoRouter/AltoRouter.php';
 
+$nonAuthRoutes = ['login', 'login-error', 'auth', 'logout'];
+
+// Router setup
+//---
 $router = new AltoRouter();
 $router->setBasePath('portfolio/');
-
 $viewPath = 'views/';
 
+// Router matches
+//---
 $router->map('GET', '/', $viewPath . 'home.php', 'home');
-// $router->map('GET|POST', '/comment', $viewPath . 'comment.php', 'comment');
-// $router->map('GET|POST', '/subscribe', $viewPath . 'subscribe.php', 'subscribe');
+// Auth
+$router->map('GET', '/login', $viewPath . 'auth/login.php', 'login');
+$router->map('GET', '/login/[*:error]', $viewPath . 'auth/login.php', 'login-error');
+$router->map('GET', '/logout', $viewPath . 'auth/logout.php', 'logout');
+$router->map('GET', '/auth', $viewPath . 'auth/auth.php', 'auth');
 
-// $router->map('GET', '/email', $viewPath . 'emails/emailTemplate/email.html', 'email');
-// $router->map('GET', '/confirmation', $viewPath . 'emails/confirmation/email.html', 'confirmation');
-// $router->map('GET', '/tosnowbird', $viewPath . 'emails/tosnowbird/email.html', 'tosnowbird');
-
-// $router->map('GET', '/faqs', $viewPath . 'faqs.php', 'faqs');
-// $router->map('GET', '/testimonials', $viewPath . 'testimonials.php', 'testimonials');
+$result = $viewPath . '404.php';
 
 $match = $router->match();
-
-
 if($match) {
-	require $match['target'];
+	if(empty($_SESSION['auth']) && !in_array($match['name'], $nonAuthRoutes)) {
+		header('Location: login');
+		exit;
+	}
+
+	$result = $match['target'];
+	
 } else {
-	require $viewPath . '404.php';
+	header('HTTP/1.0 404 Not Found');
 }
 
+include $viewPath . 'partials/head.php';
+include $result;
+include $viewPath . 'partials/footer.php';
 
 ?>
