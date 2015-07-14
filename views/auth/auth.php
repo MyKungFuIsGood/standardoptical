@@ -5,7 +5,7 @@ Hello world
 session_start();
 
 if(!isset($_POST['auth'])){
-	header('Location: login/error');
+	header('Location: login/error?status=0');
 	exit;
 }
 
@@ -20,7 +20,7 @@ $auth = $_POST['auth'];
 
 $pass = 'lovecomm';
 if($auth !== $pass){
-	header('Location: login/error');
+	header('Location: login/error?status=1&pass=' . $auth);
 	exit;
 }
 

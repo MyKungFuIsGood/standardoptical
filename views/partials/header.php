@@ -1,6 +1,8 @@
 <header>
 	<div class="container">
-		<img class="responsive-img logo" src="assets/images/logo.png">
+		<a href="/portfolio">
+			<img class="responsive-img logo" src="/portfolio/assets/images/logo.png">
+		</a>
 
 		<form class="logout" action="/portfolio/logout" method="post">
 			<div class="row">

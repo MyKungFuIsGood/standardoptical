@@ -1,6 +1,10 @@
 /* label color */
 .input-field label {
 	// color: #000;
+
+	&:after {
+		width: 100%;
+	}
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
@@ -24,4 +28,25 @@
 /* icon prefix focus color */
 .input-field .prefix.active {
 	color: $primary-color;
+}
+
+// Login Form
+//---
+form.login {
+	padding: $grid-gutter !important;
+	border-radius: 9px;
+	border: 3px solid $primary-color;
+
+	@extend .z-depth-1;
+
+	// Raised Button
+	.btn {
+		margin-top: 15px;
+		color: $button-color-raised;
+		background-color: $primary-color;
+
+		&:hover {
+			background-color: lighten($primary-color, 5%);
+		}
+	}
 }

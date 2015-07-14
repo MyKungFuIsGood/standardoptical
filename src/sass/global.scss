@@ -3,7 +3,7 @@
 }
 
 body {
-	background-color: $primary-color;
+	// background-color: $primary-color;
 }
 
 header {
@@ -20,22 +20,7 @@ main {
 	padding-top: 15vh;
 }
 
-form.login {
-	padding: $grid-gutter !important;
-	background-color: #fff;
-	border-radius: 5px;
-	@extend .z-depth-1;
 
-	// Raised Button
-	.btn {
-		color: $button-color-raised;
-		background-color: $primary-color;
-
-		&:hover {
-			background-color: lighten($primary-color, 5%);
-		}
-	}
-}
 
 
 

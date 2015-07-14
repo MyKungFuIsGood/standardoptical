@@ -1,5 +1,6 @@
 <?php
-$error = (isset($match['params']['error']));
+	$error = (isset($_GET['status']) ? true : false);
+	$pass = (isset($_GET['pass']) ? $_GET['pass'] : NULL);
 ?>
 
 <div class="container">
@@ -7,8 +8,8 @@ $error = (isset($match['params']['error']));
 		<form class="login col s6 offset-s3" action="/portfolio/auth" method="post">
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="auth" type="text" class="validate" name="auth" require="required">
-					<label for="auth">Login</label>
+					<input id="auth" type="text" class="<?php echo ($error ? 'invalid' : 'valid'); ?>" name="auth" require="required" value="<?php echo ($error ? $pass : NULL); ?>">
+					<label for="auth" data-error="Wrong pass." class="<?php echo ($error ? 'active' : ''); ?>">Type Password...</label>
 					<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
 				</div>
 			</div><!-- .row -->
