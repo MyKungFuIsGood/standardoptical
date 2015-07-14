@@ -4,6 +4,9 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 <script>($.fn.slider || document.write('<script src="/portfolio/assets/js/plugins/materialize.min.js"><\/script>'));</script>
 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script>(window.TweenMax || document.write('<script src="/assets/js/plugins/TweenMax.min.js"><\/script>'));</script>
+
 <script src="/portfolio/assets/js/main.min.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -1,17 +1,34 @@
-<div class="row">
-	<div class="col s12 m2">
-		<p class="z-depth-1">z-depth-1</p>
-	</div>
-	<div class="col s12 m2">
-		<p class="z-depth-2">z-depth-2</p>
-	</div>
-	<div class="col s12 m2">
-		<p class="z-depth-3">z-depth-3</p>
-	</div>
-	<div class="col s12 m2">
-		<p class="z-depth-4">z-depth-4</p>
-	</div>
-	<div class="col s12 m2">
-		<p class="z-depth-5">z-depth-5</p>
-	</div>
+<div class="row cards category">
+	<div class="col s12 m6 l4">
+		<a href="/portfolio/tv">
+			<div class="card hoverable">
+				<div class="card-image">
+					<img src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-14095.jpg">
+					<span class="card-title">TV &amp; Pugs</span>
+				</div><!-- .card-image -->
+			</div><!-- .card -->
+		</a>
+	</div><!-- .col .s12 m6 l4 -->
+	<div class="col s12 m6 l4">
+		<a href="/portfolio/outdoor">
+			<div class="card hoverable">
+				<div class="card-image">
+					<img src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-219093.jpg">
+					<span class="card-title">Outdoor &amp; Cats</span>
+				</div><!-- .card-image -->
+			</div><!-- .card -->
+		</a>
+	</div><!-- .col .s12 m6 l4 -->
+	<div class="col s12 m6 l4">
+		<a href="/portfolio/collateral">
+			<div class="card hoverable">
+				<div class="card-image">
+					<img src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-234144.jpg">
+					<span class="card-title">Collateral &amp; Gpigs</span>
+				</div><!-- .card-image -->
+			</div><!-- .card -->
+		</a>
+	</div><!-- .col .s12 m6 l4 -->
 </div>
+
+

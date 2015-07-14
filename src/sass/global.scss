@@ -1,5 +1,6 @@
 * {
 	outline: none !important;
+	// border: 1px solid hotpink;
 }
 
 body {
@@ -17,27 +18,60 @@ header {
 }
 
 main {
-	padding-top: 15vh;
+	margin-top: 30px;
+	position: relative;
+
+	.row .col {
+		opacity: 0;
+	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-p {
-	width: 100px;
-	height: 100px;
-	background-color: #26a69a;
-	margin: 20px auto;
+@media(min-width: $medium-screen-up) {
+	.container {
+		width: 85%;
+	}
 }
 
+.card .card-image img {
+	display: block;
+}
+
+// Images in cards scaling up
+//---
+// .card {
+// 	.card-image {
+// 		overflow: hidden;
+
+// 		img {
+// 			display: block;
+// 			transition: all 0.35s ease-in-out;
+// 		}
+// 	}
+
+// 	&:hover, &:focus, &:active {
+// 		img {
+// 			transition: all 2s ease-in-out;
+// 			transform: scale(1.2);
+// 		}
+// 	}
+// }
+
+
+.cards.category {
+	.card-content {
+		color: color('grey', 'darken-2');
+	}
+}
+
+.preloader-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto auto;
+}
+
+.breadcrumbs {
+	margin-top: 30px;
+}

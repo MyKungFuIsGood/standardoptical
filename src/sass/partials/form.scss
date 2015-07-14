@@ -33,9 +33,11 @@
 // Login Form
 //---
 form.login {
-	padding: $grid-gutter !important;
-	border-radius: 9px;
 	border: 3px solid $primary-color;
+	border-radius: 9px;
+
+	margin-top: 15vh;	
+	padding: $grid-gutter !important;
 
 	@extend .z-depth-1;
 
