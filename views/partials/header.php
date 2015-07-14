@@ -1,7 +1,7 @@
 <?php
 $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
 
-$path = '';
+$path = '/';
 $breadcrumb = '';
 foreach($crumbs as $crumb){
 	if($crumb != '') {
