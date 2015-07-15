@@ -6,8 +6,8 @@
 
 <div class="row tv">
 	<?php foreach($files as $file) : ?>
-		<div class="col s12 m6 l4">
-			<a href="<?php echo '/portfolio' . $path . $file; ?>">
+		<div class="col s12 m6 l2">
+			<a href="<?php echo '/portfolio/tv/' . preg_replace('/\\.[^.\\s]{3,4}$/', '', $file); ?>">
 				<div class="card hoverable">
 					<div class="card-image">
 						<img src="<?php echo '/portfolio' . $path . 'thumbs/' . $file; ?>">

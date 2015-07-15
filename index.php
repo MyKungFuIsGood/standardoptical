@@ -16,16 +16,19 @@ $viewPath = 'views/';
 //---
 // Manual
 $router->map('GET|POST', '/', $viewPath . 'home.php', 'home');
-$router->map('GET|POST', '/tv', $viewPath . 'tv.php', 'tv');
-$router->map('GET|POST', '/outdoor', $viewPath . 'outdoor.php', 'outdoor');
-$router->map('GET|POST', '/collateral', $viewPath . 'collateral.php', 'collateral');
+$router->map('GET', '/tv', $viewPath . 'tv.php', 'tv');
+$router->map('GET', '/outdoor', $viewPath . 'outdoor.php', 'outdoor');
+$router->map('GET', '/collateral', $viewPath . 'collateral.php', 'collateral');
 // Auth
 $router->map('GET|POST', '/login', $viewPath . 'auth/login.php', 'login');
 $router->map('GET|POST', '/login/[*:error]', $viewPath . 'auth/login.php', 'login-error');
 $router->map('GET|POST', '/logout', $viewPath . 'auth/logout.php', 'logout');
 $router->map('POST', '/auth', $viewPath . 'auth/auth.php', 'auth');
 // Dynamic
+$router->map('GET', '/tv/[:action]', $viewPath . 'singleFile.php', 'tvFile');
 
+// Matching
+//---
 $result = $viewPath . '404.php';
 
 $match = $router->match();
@@ -38,9 +41,11 @@ if($match) {
 	$result = $match['target'];
 
 } else {
-	header('HTTP/1.0 404 Not Found');
+	// header('HTTP/1.0 404 Not Found');
 }
 
+// Return route match 
+//---
 include $viewPath . 'partials/head.php';
 include $result;
 include $viewPath . 'partials/footer.php';

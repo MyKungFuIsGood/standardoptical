@@ -1,14 +1,14 @@
 <?php
 $crumbs = array_diff(explode("/",$_SERVER["REQUEST_URI"]), array(''));
 
-$path = '/';
+$path = '';
 $breadcrumb = '';
 $last = end($crumbs); 
 $length = count($crumbs);
 
 foreach($crumbs as $crumb){
 	if($crumb != $last) {
-		$path .= $crumb . '/';
+		$path .= '/' . $crumb ;
 		$breadcrumb .= '<a href="' . $path . '">';
 		$breadcrumb .= ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
 		$breadcrumb .= '</a>';

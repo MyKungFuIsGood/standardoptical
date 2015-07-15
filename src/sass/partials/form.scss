@@ -36,7 +36,6 @@ form.login {
 	border: 3px solid $primary-color;
 	border-radius: 9px;
 
-	margin-top: 15vh;	
 	padding: $grid-gutter !important;
 
 	@extend .z-depth-1;
@@ -50,5 +49,9 @@ form.login {
 		&:hover {
 			background-color: lighten($primary-color, 5%);
 		}
+	}
+
+	@media(min-width: $medium-screen-up) {
+		margin-top: 15vh;
 	}
 }
