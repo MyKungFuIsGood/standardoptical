@@ -1,16 +1,21 @@
 <?php
-$crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+$crumbs = array_diff(explode("/",$_SERVER["REQUEST_URI"]), array(''));
 
 $path = '/';
 $breadcrumb = '';
+$last = end($crumbs); 
+$length = count($crumbs);
+
 foreach($crumbs as $crumb){
-	if($crumb != '') {
+	if($crumb != $last) {
 		$path .= $crumb . '/';
 		$breadcrumb .= '<a href="' . $path . '">';
 		$breadcrumb .= ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
-		$breadcrumb .= '</a>&nbsp;/&nbsp;';
+		$breadcrumb .= '</a>';
+		$breadcrumb .= '&nbsp;/&nbsp;';
 	}
 }
+$breadcrumb .= ucfirst($last);
 ?>
 
 <header>
@@ -19,7 +24,9 @@ foreach($crumbs as $crumb){
 			<img class="responsive-img logo" src="/portfolio/assets/images/logo.png">
 		</a>
 		<div class="breadcrumbs">
-			<?php echo $breadcrumb ?>
+			<?php if(strripos($breadcrumb, 'login') == false) : ?>
+				<?php echo $breadcrumb; ?>
+			<? endif; ?>
 		</div>
 	</div>
 </header>
