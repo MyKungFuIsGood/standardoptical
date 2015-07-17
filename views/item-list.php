@@ -17,7 +17,7 @@ foreach($years as $year) {
 		$tmp = array('year' => $year, 'file' => $files);
 		array_push($thumbs, $tmp);
 	}
-}	
+}
 
 // Array diff with a regular expression
 function array_pref_diff($a, $p) {
@@ -57,13 +57,19 @@ function array_pref_diff($a, $p) {
 				<div class="category-wrapper">
 					<div class="grid">
 						<?php foreach($dir['file'] as $file) : ?>
+							<?php 
+								preg_match('/[^\.]+$/i', $file, $type);
+								$type = $type[0];
+							?>
 							<?php $file = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file); ?>
 							<div class="grid-item year-<?php echo $dir['year']; ?> col s12 m6 l3">
 								<a href="<?php echo '/portfolio/' .  $category . '/' . $dir['year'] . '/' . $file; ?>">
 									<div class="card hoverable">
 										<div class="card-image">
 											<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . $dir['year'] . '/' . $file . '-thumb.png'; ?>" class="year-<?php echo $dir['year']; ?>">
-											<span class="card-title"></span>
+											<div class="valign-wrapper">
+												<i class="material-icons large"><?php echo ( strcmp($type, 'mp4') ? 'zoom_in' : 'play_circle_outline' ); ?></i>
+											</div>
 										</div><!-- .card-image -->
 									</div><!-- .card -->
 								</a>

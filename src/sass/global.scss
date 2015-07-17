@@ -5,12 +5,11 @@
 
 body {
 	// background-color: $primary-color;
-	color: #555;
+	color: $color-text;
 }
 
 header {
-	background-color: #fff;
-	padding-top: $grid-gutter;
+	padding-top: 45px;
 
 	.logo {
 		margin: 0 auto;
@@ -28,7 +27,7 @@ main {
 	}
 }
 
-.filter.btn {
+.filter.btn, .logout.btn {
 	padding: 0 15px;
 
 	$height: 1.5rem; 
@@ -36,10 +35,24 @@ main {
 	line-height: $height;
 	font-size: ($height / 2);
 
-	background-color: $primary-color;
+	color: $primary-color;
+	background-color: $color-white;
+
+	@extend .z-depth-0;
+
+	&:hover {
+		color: $primary-color;
+		background-color: lighten($primary-color, 40%);
+	}
 
 	&.active {
-		background-color: $secondary-color;
+		color: $color-white;
+		background-color: $primary-color;
+		@extend .z-depth-0;
+	}
+
+	&.disabled {
+		background-color: $color-white !important;
 	}
 }
 
@@ -60,14 +73,49 @@ main {
 	}
 }
 
+.card-image {
+	.valign-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+
+		transition: all 0.5s ease;
+		background-color: rgba(0,0,0,0);
+
+		&:hover {
+			background-color: rgba(0,0,0,0.5);
+
+			.material-icons {
+				opacity: 0.8;
+			}
+		}
+	}
+	.material-icons {
+		width: 100%;
+		color: $color-white;
+		opacity: 0;
+
+		transition: all 0.5s ease;
+	}
+}
+
 .year {
 	h5 {
 		margin-top: 30px;
 	}
 }
 
+.logout {
+	float: right;
+	margin-top: 6px;
+}
+
 .breadcrumbs {
-	margin-top: 30px;
+	margin-top: 10px;
+	float: left;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
