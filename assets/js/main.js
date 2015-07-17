@@ -363,6 +363,7 @@ $(document).ready(function() {
 
 		if($(this).text() == 'All') {
 			$('.btn.filter').not('.all').removeClass('active');
+			$('.btn.filter.all').addClass('active');
 		} else if ( $('.btn.filter.active').length == 0 ) {
 			$('.btn.filter.all').addClass('active');
 		} else {
