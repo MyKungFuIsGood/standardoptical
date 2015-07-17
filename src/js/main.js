@@ -15,12 +15,16 @@ $(document).ready(function() {
 
 	$('.btn.filter').not('.disabled').click(function() {
 
+		$(this).toggleClass('active');
+
 		if($(this).text() == 'All') {
-			$('.btn.filter').removeClass('active');
+			$('.btn.filter').not('.all').removeClass('active');
+		} else if ( $('.btn.filter.active').length == 0 ) {
+			$('.btn.filter.all').addClass('active');
 		} else {
+			console.log('removing class');
 			$('.btn.filter.all').removeClass('active');
 		}
-		$(this).toggleClass('active');
 
 		var filters = [];
 		$('.btn.filter.active').each(function() {

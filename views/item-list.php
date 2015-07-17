@@ -35,7 +35,7 @@ function array_pref_diff($a, $p) {
 	<div class="filters">
 		<h4>Filters</h4>
 		<hr>
-		<div class="col s3 m1"><button class="btn filter all active" value="*">All</button></div>
+		<div class="col s3 m1"><button class="btn filter all active waves-effect waves-light" value="*">All</button></div>
 		<?php foreach($thumbs as $year): ?>
 			<?php
 				if(!empty($year['file'])) {
@@ -44,7 +44,7 @@ function array_pref_diff($a, $p) {
 					$disabled = true;
 				}
 			?>
-			<div class="col s3 m1"><button class="btn filter <?php echo ($disabled ? 'disabled' : ''); ?>" value=".year-<?php echo $year['year']; ?>"><?php echo $year['year']; ?></button></div>
+			<div class="col s3 m1"><button class="btn filter  waves-effect waves-light <?php echo ($disabled ? 'disabled' : ''); ?>" value=".year-<?php echo $year['year']; ?>"><?php echo $year['year']; ?></button></div>
 		<?php endforeach; ?>
 	</div><!-- .filters -->
 	<div class="clearfix"></div>
