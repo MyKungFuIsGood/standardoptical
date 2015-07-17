@@ -51,7 +51,7 @@ function array_pref_diff($a, $p) {
 
 	<?php foreach($thumbs as $dir) : ?>
 		<?php if(!empty($dir['file'])) : ?>
-			<div id="<?php echo $dir['year']; ?>" class="year active">
+			<div id="<?php echo $dir['year']; ?>" class="year">
 				<h5><?php echo $dir['year']; ?></h5>
 				<hr>
 				<div class="grid">
