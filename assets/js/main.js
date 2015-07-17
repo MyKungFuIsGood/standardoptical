@@ -378,7 +378,7 @@ $(document).ready(function() {
 
 		filters.forEach(function(v) {
 			$('img' + v).unveil(100, function() {
-				imageEnter($(this));
+				// imageEnter($(this));
 			});
 		});
 	});
@@ -403,13 +403,13 @@ var imageEnter = function(el) {
 		TweenMax.fromTo(
 			$(this),
 			1,
-			{ scale: 1.2, opacity: 0 },
+			{ scale: 0.8, opacity: 0 },
 			{ scale: 1, opacity: 1},
 			reflowImages()
 		);
 	});
 };
 
-var reflowImages = function (el) {
+var reflowImages = function () {
 	$('.grid').isotope('layout');
 }
