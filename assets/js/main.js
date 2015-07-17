@@ -13,7 +13,7 @@ $(document).ready(function() {
 		imageEnter($(this));
 	});
 
-	$('.btn.filter').click(function() {
+	$('.btn.filter').not('.disabled').click(function() {
 
 		if($(this).text() == 'All') {
 			$('.btn.filter').removeClass('active');

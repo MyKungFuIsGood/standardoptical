@@ -36,15 +36,17 @@ function array_pref_diff($a, $p) {
 		<h4>Filters</h4>
 		<hr>
 		<div class="col s3 m1"><button class="btn filter all active" value="*">All</button></div>
-		<div class="col s3 m1"><button class="btn filter" value=".year-2015">2015</button></div>
-		<div class="col s3 m1"><button class="btn filter" value=".year-2014">2014</button></div>
-		<div class="col s3 m1"><button class="btn filter" value=".year-2013">2013</button></div>
-		<div class="col s3 m1"><button class="btn filter" value=".year-2012">2012</button></div>
-		<div class="col s3 m1"><button class="btn filter" value=".year-2011">2011</button></div>
-		<div class="col s3 m1"><button class="btn filter" value=".year-2010">2010</button></div>
-		<div class="col s3 m1"><button class="btn filter" value=".year-2009">2009</button></div>
-		<div class="col s3 m1"><button class="btn filter" value=".year-2008">2008</button></div>
-	</div>
+		<?php foreach($thumbs as $year): ?>
+			<?php
+				if(!empty($year['file'])) {
+					$disabled = false;
+				} else {
+					$disabled = true;
+				}
+			?>
+			<div class="col s3 m1"><button class="btn filter <?php echo ($disabled ? 'disabled' : ''); ?>" value=".year-<?php echo $year['year']; ?>"><?php echo $year['year']; ?></button></div>
+		<?php endforeach; ?>
+	</div><!-- .filters -->
 	<div class="clearfix"></div>
 
 	<?php foreach($thumbs as $dir) : ?>
