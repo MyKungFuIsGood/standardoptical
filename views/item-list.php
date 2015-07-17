@@ -47,7 +47,7 @@ function array_pref_diff($a, $p) {
 				<div class="col s3 m1"><button class="btn filter  waves-effect waves-light <?php echo ($disabled ? 'disabled' : ''); ?>" value=".year-<?php echo $year['year']; ?>"><?php echo $year['year']; ?></button></div>
 			<?php endforeach; ?>
 			<div class="clearfix"></div>
-		</div>
+		</div><!-- .category-wrapper -->
 	</div><!-- .filters -->
 
 	<?php foreach($thumbs as $dir) : ?>
