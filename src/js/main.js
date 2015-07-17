@@ -4,6 +4,8 @@ $('#auth').change(function() {
 });
 
 $(document).ready(function() {
+
+	// init isotope
 	$('.grid').isotope({
 		itemSelector: '.grid-item'
 	});
@@ -13,6 +15,7 @@ $(document).ready(function() {
 		imageEnter($(this));
 	});
 
+	// year filters on item-list
 	$('.btn.filter').not('.disabled').click(function() {
 
 		$(this).toggleClass('active');
@@ -38,6 +41,18 @@ $(document).ready(function() {
 				imageEnter($(this));
 			});
 		});
+	});
+
+	// media element player 
+	$('video').mediaelementplayer({
+		enableAutosize: true,
+		alwaysShowControls: false,
+		iPadUseNativeControls: false,
+		iPhoneUseNativeControls: false,
+		AndroidUseNativeControls: false,
+		alwaysShowHours: false,
+		showTimecodeFrameCount: false,
+		features: ['playpause', 'progress', 'current', 'duration', 'tracks', 'volume', 'fullscreen']
 	});
 
 }); //document.ready

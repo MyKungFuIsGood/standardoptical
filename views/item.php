@@ -12,7 +12,8 @@ $type = $type[0];
 
 ?>
 
-<div class="col s12">
+<div class="row">
+<div class="col s8 offset-s2">
 	<div class="card hoverable">
 		<?php if($type == '.jpg'): ?>
 			<div class="card-image">
@@ -20,5 +21,17 @@ $type = $type[0];
 				<span class="card-title"><?php echo $file ?></span>
 			</div>
 		<?php endif; ?>
+
+		<?php if($type == '.mp4'): ?>
+			<div class="card-image">
+				<video 
+					src="<?php echo '/portfolio/media/' . $category . '/' . $year . '/' . $file . $type; ?>"
+					poster="<?php echo '/portfolio/media/' . $category . '/' . $year . '/' . $file . '-thumb' . $type; ?>" 
+					with="100%" 
+					height="100%">
+				</video>
+			</div>
+		<?php endif; ?>
 	</div>
+</div>
 </div>
