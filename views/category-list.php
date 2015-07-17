@@ -4,8 +4,8 @@ $categories = array_diff(scandir($path, 0), array('.', '..'));
 ?>
 
 <div class="row cards category">
-	<h2>Categories</h2>
-	<hr>
+	<h4>Categories</h4>
+	<div class="category-wrapper">
 	<?php foreach($categories as $category) : ?>
 		<?php if(is_dir($path . $category)) : ?>
 			<div class="col s12 m6 l4">
@@ -20,6 +20,7 @@ $categories = array_diff(scandir($path, 0), array('.', '..'));
 			</div><!-- .col .s12 m6 l4 -->
 		<?php endif; ?>
 	<?php endforeach; ?>
+	</div><!-- .category-wrapper -->
 </div><!-- .row -->
 
 

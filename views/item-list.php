@@ -34,43 +34,44 @@ function array_pref_diff($a, $p) {
 <div class="row <?php echo $category; ?>">
 	<div class="filters">
 		<h4>Filters</h4>
-		<hr>
-		<div class="col s3 m1"><button class="btn filter all active waves-effect waves-light" value="*">All</button></div>
-		<?php foreach($thumbs as $year): ?>
-			<?php
+		<div class="category-wrapper">
+			<div class="col s3 m1"><button class="btn filter all active waves-effect waves-light" value="*">All</button></div>
+			<?php foreach($thumbs as $year): ?>
+				<?php
 				if(!empty($year['file'])) {
 					$disabled = false;
 				} else {
 					$disabled = true;
 				}
-			?>
-			<div class="col s3 m1"><button class="btn filter  waves-effect waves-light <?php echo ($disabled ? 'disabled' : ''); ?>" value=".year-<?php echo $year['year']; ?>"><?php echo $year['year']; ?></button></div>
-		<?php endforeach; ?>
-		<div class="clearfix"></div>
-		<hr>
+				?>
+				<div class="col s3 m1"><button class="btn filter  waves-effect waves-light <?php echo ($disabled ? 'disabled' : ''); ?>" value=".year-<?php echo $year['year']; ?>"><?php echo $year['year']; ?></button></div>
+			<?php endforeach; ?>
+			<div class="clearfix"></div>
+		</div>
 	</div><!-- .filters -->
 
 	<?php foreach($thumbs as $dir) : ?>
 		<?php if(!empty($dir['file'])) : ?>
 			<div id="<?php echo $dir['year']; ?>" class="year">
 				<h5><?php echo $dir['year']; ?></h5>
-				<hr>
-				<div class="grid">
-					<?php foreach($dir['file'] as $file) : ?>
-						<?php $file = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file); ?>
-						<div class="grid-item year-<?php echo $dir['year']; ?> col s12 m6 l3">
-							<a href="<?php echo '/portfolio/' .  $category . '/' . $dir['year'] . '/' . $file; ?>">
-								<div class="card hoverable">
-									<div class="card-image">
-										<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . $dir['year'] . '/' . $file . '-thumb.jpg'; ?>" class="year-<?php echo $dir['year']; ?>">
-										<span class="card-title"></span>
-									</div><!-- .card-image -->
-								</div><!-- .card -->
-							</a>
-						</div><!-- .col .s12 .m6 .l4 -->	
-					<?php endforeach; ?>
-				</div><!-- .grid -->
-				<div class="clearfix"></div>
+				<div class="category-wrapper">
+					<div class="grid">
+						<?php foreach($dir['file'] as $file) : ?>
+							<?php $file = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file); ?>
+							<div class="grid-item year-<?php echo $dir['year']; ?> col s12 m6 l3">
+								<a href="<?php echo '/portfolio/' .  $category . '/' . $dir['year'] . '/' . $file; ?>">
+									<div class="card hoverable">
+										<div class="card-image">
+											<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . $dir['year'] . '/' . $file . '-thumb.jpg'; ?>" class="year-<?php echo $dir['year']; ?>">
+											<span class="card-title"></span>
+										</div><!-- .card-image -->
+									</div><!-- .card -->
+								</a>
+							</div><!-- .col .s12 .m6 .l4 -->	
+						<?php endforeach; ?>
+					</div><!-- .grid -->
+					<div class="clearfix"></div>
+				</div><!-- .category-wrapper -->
 			</div><!-- #year -->
 		<?php endif; ?>
 	<?php endforeach; ?>

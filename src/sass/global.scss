@@ -5,11 +5,12 @@
 
 body {
 	// background-color: $primary-color;
+	color: #555;
 }
 
 header {
 	background-color: #fff;
-	padding: $grid-gutter;
+	padding-top: $grid-gutter;
 
 	.logo {
 		margin: 0 auto;
@@ -18,12 +19,7 @@ header {
 }
 
 main {
-	margin-top: 30px;
 	position: relative;
-
-	.row .col {
-		// opacity: 0;
-	}
 }
 
 @media(min-width: $medium-screen-up) {
@@ -47,6 +43,13 @@ main {
 	}
 }
 
+.category-wrapper {
+	border-top: 1px solid #ccc;
+
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 .card .card-image img {
 	display: block;
 }
@@ -54,6 +57,12 @@ main {
 .cards.category {
 	.card-content {
 		color: color('grey', 'darken-2');
+	}
+}
+
+.year {
+	h5 {
+		margin-top: 30px;
 	}
 }
 

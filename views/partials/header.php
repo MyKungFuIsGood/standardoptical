@@ -10,7 +10,7 @@ $crumbs = array_diff(explode("/",$_SERVER["REQUEST_URI"]), array(
 	'2010',
 	'2009',
 	'2008'
-));
+	));
 
 $path = '';
 $breadcrumb = '';
@@ -31,15 +31,17 @@ $breadcrumb .= ucfirst($last);
 
 <header>
 	<div class="container">
-		<a href="/portfolio">
-			<img class="responsive-img logo" src="/portfolio/assets/images/logo.png">
-		</a>
-		<div class="breadcrumbs">
-			<?php if(strripos($breadcrumb, 'login') == false) : ?>
-				<?php echo $breadcrumb; ?>
-			<? endif; ?>
-		</div>
-	</div>
+		<div class="row">
+			<a href="/portfolio">
+				<img class="responsive-img logo" src="/portfolio/assets/images/logo.png">
+			</a>
+			<div class="breadcrumbs">
+				<?php if(strripos($breadcrumb, 'login') == false) : ?>
+					<?php echo $breadcrumb; ?>
+				<? endif; ?>
+			</div><!-- .breadcrumbs -->
+		</div><!-- .row -->
+	</div><!-- .container -->
 </header>
 
 <body>

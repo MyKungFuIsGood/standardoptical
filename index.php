@@ -25,7 +25,6 @@ $router->map('POST', '/auth', $viewPath . 'auth/auth.php', 'auth');
 $router->map('GET', '/[:category]', $viewPath . 'item-list.php', 'category');
 $router->map('GET', '/[:category]/[:year]/[:file]', $viewPath . 'item.php', 'item');
 
-
 $router->map('GET', '/[:category]/', $viewPath . 'item-list.php', 'category/');
 $router->map('GET', '/[:category]/[:year]/[:file]/', $viewPath . 'item.php', 'item/');
 
