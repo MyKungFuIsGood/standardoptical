@@ -358,7 +358,6 @@ $(document).ready(function() {
 
 	// year filters on item-list
 	$('.btn.filter').not('.disabled').click(function() {
-
 		$(this).toggleClass('active');
 
 		if($(this).text() == 'All') {
@@ -367,7 +366,6 @@ $(document).ready(function() {
 		} else if ( $('.btn.filter.active').length == 0 ) {
 			$('.btn.filter.all').addClass('active');
 		} else {
-			console.log('removing class');
 			$('.btn.filter.all').removeClass('active');
 		}
 
@@ -415,8 +413,3 @@ var imageEnter = function(el) {
 var reflowImages = function (el) {
 	$('.grid').isotope('layout');
 }
-
-$(window).load(function() {
-	// force reflow for auto-unveiled images
-	$('.grid').isotope('layout');
-});

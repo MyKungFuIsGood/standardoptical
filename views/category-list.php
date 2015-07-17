@@ -12,7 +12,7 @@ $categories = array_diff(scandir($path, 0), array('.', '..'));
 				<a href="<?php echo '/portfolio/' . $category; ?>">
 					<div class="card hoverable">
 						<div class="card-image">
-							<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . $category . '-thumb.png'; ?>">
+							<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . 'category-thumb.png'; ?>">
 							<span class="card-title"><?php echo ucfirst($category); ?></span>
 						</div><!-- .card-image -->
 					</div><!-- .card -->

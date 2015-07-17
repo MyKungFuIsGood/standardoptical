@@ -44,7 +44,7 @@ function array_pref_diff($a, $p) {
 					$disabled = true;
 				}
 				?>
-				<div class="col s3 m1"><button class="btn filter  waves-effect waves-light <?php echo ($disabled ? 'disabled' : ''); ?>" value=".year-<?php echo $year['year']; ?>"><?php echo $year['year']; ?></button></div>
+				<div class="col s3 m1"><button class="btn filter waves-effect waves-light <?php echo ($disabled ? 'disabled' : ''); ?>" value=".year-<?php echo $year['year']; ?>"><?php echo $year['year']; ?></button></div>
 			<?php endforeach; ?>
 			<div class="clearfix"></div>
 		</div><!-- .category-wrapper -->
