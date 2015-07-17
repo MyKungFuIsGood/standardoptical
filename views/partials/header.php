@@ -41,7 +41,16 @@ $breadcrumb .= ucwords(str_replace("-", " ", $last));
 				<? endif; ?>
 			</div><!-- .breadcrumbs -->
 
-			<div class=""></div>
+			<?php if(!empty($_SESSION['auth'])) : ?>
+				<form class="logout" action="/portfolio/logout" method="post">
+					<div class="row">
+						<div class="input-field hide">
+							<input id="logout" type="text" class="validate">
+						</div>
+						<button class="btn logout waves-effect waves-light" type="submit" name="action">Logout</button>
+					</div><!-- .row -->
+				</form><!-- form.login -->
+			<?php endif; ?>
 		</div><!-- .row -->
 	</div><!-- .container -->
 </header>
