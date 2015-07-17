@@ -21,7 +21,7 @@ foreach($crumbs as $crumb){
 	if($crumb != $last) {
 		$path .= '/' . $crumb ;
 		$breadcrumb .= '<a href="' . $path . '">';
-		$breadcrumb .= ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
+		$breadcrumb .= ucwords(str_replace(array(".php","_", "-"),array(""," ", " "),$crumb) . ' ');
 		$breadcrumb .= '</a>';
 		$breadcrumb .= '&nbsp;/&nbsp;';
 	}
@@ -40,6 +40,8 @@ $breadcrumb .= ucwords(str_replace("-", " ", $last));
 					<?php echo $breadcrumb; ?>
 				<? endif; ?>
 			</div><!-- .breadcrumbs -->
+
+			<div class=""></div>
 		</div><!-- .row -->
 	</div><!-- .container -->
 </header>

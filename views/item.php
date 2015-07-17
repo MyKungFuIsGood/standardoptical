@@ -18,7 +18,6 @@ $type = $type[0];
 			<?php if($type == '.jpg'): ?>
 				<div class="card-image">
 					<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . $year . '/' .  $file . $type; ?>">
-					<span class="card-title"><?php echo $file ?></span>
 				</div>
 			<?php endif; ?>
 

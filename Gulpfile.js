@@ -1,6 +1,7 @@
 // Include gulp
 var gulp = require('gulp');
 
+// Gulp plugins loads almost all our dependency from package.json
 var plugins = require('gulp-load-plugins')();
 var pkg = require ('./package.json');
 
@@ -9,9 +10,12 @@ var autoprefixer = require('autoprefixer-core');
 var mqpacker     = require('css-mqpacker');
 var focus 			 = require('postcss-focus');
 
+// Defining path variables
 var dirs = {
 	"src": "src",
-	"assets": "assets"
+	"assets": "assets",
+	"views": "views",
+	"media": "media"
 };
 
 var paths = {
@@ -27,6 +31,9 @@ var paths = {
 		'views/**/*.html'
 	]
 };
+
+// Tasks
+//---
 
 // Concatenate & Minify JS
 gulp.task('script', function() {
@@ -46,6 +53,7 @@ gulp.task('script', function() {
 	.pipe(gulp.dest( dirs.assets + '/js/' ))
 	.pipe(plugins.livereload());
 });
+
 
 // Compile our less
 gulp.task('sass', function() {
@@ -74,6 +82,7 @@ gulp.task('sass', function() {
 	.pipe(gulp.dest( dirs.assets + '/css/' ))
 	.pipe(plugins.livereload());
 });
+
 
 // Bower Update Task
 gulp.task('bower', function() {
@@ -164,3 +173,11 @@ gulp.task('watch', function() {
 		plugins.livereload.changed(event.path);
 	});
 });
+
+gulp.task('init', ['vendor'], function() {
+ gulp.run('sass');
+ gulp.run('script');
+ gulp.run('thumbnail');
+});
+
+gulp.task('build', ['script', 'sass', 'thumbnail', 'cachebust']);

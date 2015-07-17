@@ -62,7 +62,7 @@ function array_pref_diff($a, $p) {
 								<a href="<?php echo '/portfolio/' .  $category . '/' . $dir['year'] . '/' . $file; ?>">
 									<div class="card hoverable">
 										<div class="card-image">
-											<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . $dir['year'] . '/' . $file . '-thumb.jpg'; ?>" class="year-<?php echo $dir['year']; ?>">
+											<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . $dir['year'] . '/' . $file . '-thumb.png'; ?>" class="year-<?php echo $dir['year']; ?>">
 											<span class="card-title"></span>
 										</div><!-- .card-image -->
 									</div><!-- .card -->
