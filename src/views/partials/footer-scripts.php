@@ -14,7 +14,7 @@ $tld = strtolower($path[2]);
 <?php if(strpos($tld, 'local')) : ?>
 	<script src="/portfolio/assets/js/main.js"></script>
 <?php else : ?>
-	<script src="/portfolio/assets/js/main.min.v1437147412195.js"></script>
+	<script src="/portfolio/assets/js/main.min.v<%= timestamp %>.js"></script>
 <?php endif; ?>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

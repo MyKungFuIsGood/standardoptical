@@ -83,18 +83,30 @@ gulp.task('bower', function() {
 
 // Create image thumbnails
 gulp.task('thumbnail', function() {
-	gulp.src(['media/tv/**/*.jpg'])
+	gulp.src([ dirs.media + '/**/**/*.jpg' ])
 		.pipe(plugins.imageResize({
-			width: 500,
+			width: 350,
 			crop: false,
+			format: 'png',
 			quality: 0.6,
 			upscale: false
 		}))
 		.pipe(plugins.rename( function (path) {
 			path.basename += "-thumb";
 		}))
-		.pipe(gulp.dest('media/tv'));
+		.pipe(gulp.dest( dirs.media ));
 });
+
+
+// Cachebust
+gulp.task('cachebust', function() {
+	gulp.src([dirs.src + '/views/**/*.php'])
+		.pipe(plugins.consolidate('lodash', {
+			timestamp: Date.now()
+		}))
+		.pipe(gulp.dest( dirs.views ));
+});
+
 
 // Migrate Vendor Dependencies 
 gulp.task('vendor',['bower'], function() {
