@@ -26,7 +26,7 @@ $type = $type[0];
 			<div class="card-image">
 				<video 
 					src="<?php echo '/portfolio/media/' . $category . '/' . $year . '/' . $file . $type; ?>"
-					poster="<?php echo '/portfolio/media/' . $category . '/' . $year . '/' . $file . '-thumb' . $type; ?>" 
+					poster="<?php echo '/portfolio/media/' . $category . '/' . $year . '/' . $file . '-thumb.jpg'; ?>" 
 					with="100%" 
 					height="100%">
 				</video>

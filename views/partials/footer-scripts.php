@@ -7,8 +7,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
 <script>(window.TweenMax || document.write('<script src="/assets/js/plugins/TweenMax.min.js"><\/script>'));</script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/mediaelement/2.17.0/mediaelement-and-player.min.js"></script>
-
 <script src="/portfolio/assets/js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

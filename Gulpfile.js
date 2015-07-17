@@ -19,8 +19,8 @@ var paths = {
 		dirs.src + '/sass/**/*.scss'
 	],
 	script: [
-		dirs.src + '/js/*.js',
-		dirs.src + '/js/scripts/*.js'
+		dirs.src + '/js/scripts/*.js',
+		dirs.src + '/js/*.js'
 	],
 	watch: [
 		'views/**/*.php',
@@ -99,33 +99,46 @@ gulp.task('thumbnail', function() {
 // Migrate Vendor Dependencies 
 gulp.task('vendor',['bower'], function() {
 
-	//
+	// materialize js
 	gulp.src( 'src/vendor/materialize/dist/js/materialize.min.js' )
 	.pipe(gulp.dest( dirs.assets + '/js/plugins' ));
 
-	//
+	// materialize fonts - roboto
 	gulp.src( 'src/vendor/materialize/dist/font/**/*')
 	.pipe(gulp.dest( dirs.assets + '/font' ));
 
-	//
+	// materialize sass
 	gulp.src( 'src/vendor/materialize/sass/components/**/*')
 	.pipe(gulp.dest( dirs.src + '/sass/materialize' ));
 
-	//
+	// jquery
 	gulp.src( 'src/vendor/jquery/dist/jquery.min.js' )
 	.pipe(gulp.dest( dirs.assets + '/js/plugins' ));
 
-	//
+	// modernizr
 	gulp.src( 'src/vendor/modernizr/modernizr.js' )
 	.pipe(gulp.dest( dirs.assets + '/js/plugins' ));
 
-	//
+	// unveil
 	gulp.src( 'src/vendor/unveil/jquery.unveil.js' )
 	.pipe(gulp.dest( dirs.src + '/js/scripts' ));
 
-	//
+	// isotope
 	gulp.src( 'src/vendor/isotope/dist/isotope.pkgd.min.js' )
 	.pipe(plugins.rename( 'isotope.js' ))
+	.pipe(gulp.dest( dirs.src + '/js/scripts' ));
+
+	// media element assets
+	gulp.src( 'src/vendor/mediaelement/build/*.{png,svg,gif}' )
+	.pipe(gulp.dest( dirs.assets + '/css'));
+
+	// media element css
+	gulp.src( 'src/vendor/mediaelement/build/mediaelementplayer.css' )
+	.pipe(plugins.rename( 'mediaelementplayer.scss' ))
+	.pipe(gulp.dest( dirs.src + '/sass' ));
+
+	// media element js
+	gulp.src( 'src/vendor/mediaelement/build/mediaelement-and-player.min.js' )
 	.pipe(gulp.dest( dirs.src + '/js/scripts' ));
 
 });

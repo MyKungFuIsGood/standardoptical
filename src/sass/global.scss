@@ -32,32 +32,7 @@ main {
 	}
 }
 
-.card .card-image img {
-	display: block;
-}
-
-// Images in cards scaling up
-//---
-// .card {
-// 	.card-image {
-// 		overflow: hidden;
-
-// 		img {
-// 			display: block;
-// 			transition: all 0.35s ease-in-out;
-// 		}
-// 	}
-
-// 	&:hover, &:focus, &:active {
-// 		img {
-// 			transition: all 2s ease-in-out;
-// 			transform: scale(1.2);
-// 		}
-// 	}
-// }
-
 .filter.btn {
-
 	padding: 0 15px;
 
 	$height: 1.5rem; 
@@ -72,25 +47,21 @@ main {
 	}
 }
 
+.card .card-image img {
+	display: block;
+}
+
 .cards.category {
 	.card-content {
 		color: color('grey', 'darken-2');
 	}
 }
 
-.preloader-wrapper {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: 0 auto;
-
-	@media(min-width: $medium-screen-up) {
-		margin: 120px auto;
-	}
-}
-
 .breadcrumbs {
 	margin-top: 30px;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+	background: $primary-color;
+	background: linear-gradient($primary-color, darken($primary-color, 15%));
 }
