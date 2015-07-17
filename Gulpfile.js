@@ -80,6 +80,22 @@ gulp.task('bower', function() {
 	return plugins.bower();
 });
 
+
+// Create image thumbnails
+gulp.task('thumbnail', function() {
+	gulp.src(['media/tv/**/*.jpg'])
+		.pipe(plugins.imageResize({
+			width: 500,
+			crop: false,
+			quality: 0.6,
+			upscale: false
+		}))
+		.pipe(plugins.rename( function (path) {
+			path.basename += "-thumb";
+		}))
+		.pipe(gulp.dest('media/tv'));
+});
+
 // Migrate Vendor Dependencies 
 gulp.task('vendor',['bower'], function() {
 
@@ -102,6 +118,15 @@ gulp.task('vendor',['bower'], function() {
 	//
 	gulp.src( 'src/vendor/modernizr/modernizr.js' )
 	.pipe(gulp.dest( dirs.assets + '/js/plugins' ));
+
+	//
+	gulp.src( 'src/vendor/unveil/jquery.unveil.js' )
+	.pipe(gulp.dest( dirs.src + '/js/scripts' ));
+
+	//
+	gulp.src( 'src/vendor/isotope/dist/isotope.pkgd.min.js' )
+	.pipe(plugins.rename( 'isotope.js' ))
+	.pipe(gulp.dest( dirs.src + '/js/scripts' ));
 
 });
 

@@ -15,17 +15,19 @@ $viewPath = 'views/';
 // Router matches
 //---
 // Manual
-$router->map('GET|POST', '/', $viewPath . 'home.php', 'home');
-$router->map('GET', '/tv', $viewPath . 'tv.php', 'tv');
-$router->map('GET', '/outdoor', $viewPath . 'outdoor.php', 'outdoor');
-$router->map('GET', '/collateral', $viewPath . 'collateral.php', 'collateral');
+$router->map('GET|POST', '/', $viewPath . 'category-list.php', 'home');
 // Auth
 $router->map('GET|POST', '/login', $viewPath . 'auth/login.php', 'login');
 $router->map('GET|POST', '/login/[*:error]', $viewPath . 'auth/login.php', 'login-error');
 $router->map('GET|POST', '/logout', $viewPath . 'auth/logout.php', 'logout');
 $router->map('POST', '/auth', $viewPath . 'auth/auth.php', 'auth');
 // Dynamic
-$router->map('GET', '/tv/[:action]', $viewPath . 'singleFile.php', 'tvFile');
+$router->map('GET', '/[:category]', $viewPath . 'item-list.php', 'category');
+$router->map('GET', '/[:category]/[:year]/[:file]', $viewPath . 'item.php', 'item');
+
+
+$router->map('GET', '/[:category]/', $viewPath . 'item-list.php', 'category/');
+$router->map('GET', '/[:category]/[:year]/[:file]/', $viewPath . 'item.php', 'item/');
 
 // Matching
 //---

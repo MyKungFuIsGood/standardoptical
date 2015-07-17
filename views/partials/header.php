@@ -1,5 +1,16 @@
 <?php
-$crumbs = array_diff(explode("/",$_SERVER["REQUEST_URI"]), array(''));
+$crumbs = array_diff(explode("/",$_SERVER["REQUEST_URI"]), array(
+	'', 
+	'category', 
+	'2015', 
+	'2014', 
+	'2013',
+	'2012',
+	'2011',
+	'2010',
+	'2009',
+	'2008'
+));
 
 $path = '';
 $breadcrumb = '';
@@ -34,18 +45,4 @@ $breadcrumb .= ucfirst($last);
 <body>
 	<main>
 		<div class="container">
-			<div class="center-align">
-				<div class="preloader-wrapper big active center-align">
-					<div class="spinner-layer spinner-blue-only">
-						<div class="circle-clipper left">
-							<div class="circle"></div>
-						</div>
-						<div class="gap-patch">
-							<div class="circle"></div>
-						</div>
-						<div class="circle-clipper right">
-							<div class="circle"></div>
-						</div>
-					</div>
-				</div><!-- .preloader-wrapper -->
-			</div><!-- .center-align -->
+

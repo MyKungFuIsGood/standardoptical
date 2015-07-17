@@ -22,7 +22,7 @@ main {
 	position: relative;
 
 	.row .col {
-		opacity: 0;
+		// opacity: 0;
 	}
 }
 
@@ -56,6 +56,21 @@ main {
 // 	}
 // }
 
+.filter.btn {
+
+	padding: 0 15px;
+
+	$height: 1.5rem; 
+	height: $height;
+	line-height: $height;
+	font-size: ($height / 2);
+
+	background-color: $primary-color;
+
+	&.active {
+		background-color: $secondary-color;
+	}
+}
 
 .cards.category {
 	.card-content {
