@@ -26,7 +26,7 @@ foreach($crumbs as $crumb){
 		$breadcrumb .= '&nbsp;/&nbsp;';
 	}
 }
-$breadcrumb .= ucfirst($last);
+$breadcrumb .= ucwords(str_replace("-", " ", $last));
 ?>
 
 <header>
