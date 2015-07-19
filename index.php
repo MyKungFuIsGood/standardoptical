@@ -25,9 +25,6 @@ $router->map('POST', '/auth', $viewPath . 'auth/auth.php', 'auth');
 $router->map('GET', '/[a:category]', $viewPath . 'item-list.php', 'category');
 $router->map('GET', '/[:category]/[:year]/[:file]', $viewPath . 'item.php', 'item');
 
-// Json controller
-$router->map('GET', '/files', 'controller/files#show', 'show_files');
-
 // Matching
 //---
 $result = $viewPath . '404.php';
