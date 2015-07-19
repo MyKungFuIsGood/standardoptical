@@ -13,7 +13,7 @@ $type = $type[0];
 ?>
 
 <div class="row">
-	<div class="col s12 m8 offset-m2">
+	<div class="col s12 l8 offset-l2">
 		<div class="card hoverable">
 			<?php if($type == '.jpg'): ?>
 				<div class="card-image">
