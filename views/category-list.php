@@ -14,11 +14,8 @@ $categories = array_diff(scandir($path, 0), array('.', '..'));
 							<div class="card hoverable">
 								<div class="card-image">
 									<img src="/portfolio/assets/images/preloader-bg.gif" data-src="<?php echo '/portfolio/media/' . $category . '/' . 'category-thumb.png'; ?>">
-									<span class="card-title"><?php // echo ucwords(str_replace("-", " ", $category)); ?></span>
+									<span class="card-title"><?php echo ucwords(str_replace("-", " ", $category)); ?></span>
 								</div><!-- .card-image -->
-								<div class="card-content">
-									<?php echo ucwords(str_replace("-", " ", $category)); ?>
-								</div>
 							</div><!-- .card -->
 						</a>
 					</div><!-- .col .s12 m6 l4 -->

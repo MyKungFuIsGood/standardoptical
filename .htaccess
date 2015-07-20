@@ -942,8 +942,8 @@ FileETag None
      RewriteRule ^(.*)\.v[\d]+\.(css|js)$ $1.$2 [L]
 
      # remove trailing slash
-     RewriteBase /portfolio 
-     RewriteRule ^(.*)/$ $1 [L,R=301]
+     # RewriteBase /portfolio 
+     # RewriteRule ^(.*)/$ $1 [L,R=301]
 
      # Route everything to altorouter file
      RewriteCond %{REQUEST_FILENAME} !-f

@@ -22,7 +22,7 @@ $router->map('GET|POST', '/login/[*:error]', $viewPath . 'auth/login.php', 'logi
 $router->map('GET|POST', '/logout', $viewPath . 'auth/logout.php', 'logout');
 $router->map('POST', '/auth', $viewPath . 'auth/auth.php', 'auth');
 // Dynamic
-$router->map('GET', '/[a:category]', $viewPath . 'item-list.php', 'category');
+$router->map('GET', '/[:category]', $viewPath . 'item-list.php', 'category');
 $router->map('GET', '/[:category]/[:year]/[:file]', $viewPath . 'item.php', 'item');
 
 // Matching

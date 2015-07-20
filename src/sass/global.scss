@@ -101,6 +101,11 @@ main {
 		transition: all 0.5s ease;
 	}
 }
+.card .card-title {
+	background-color: rgba(30,136,229,0.9);
+	width: 100%;
+	font-size: 1.25rem;
+}
 
 .year {
 	h5 {
