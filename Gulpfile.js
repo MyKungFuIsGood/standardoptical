@@ -92,7 +92,7 @@ gulp.task('bower', function() {
 
 // Create image thumbnails
 gulp.task('thumbnail', function() {
-	gulp.src([ dirs.media + '/**/**/*.jpg' ])
+	return gulp.src([ dirs.media + '/**/**/*.jpg' ])
 		.pipe(plugins.imageResize({
 			width: 350,
 			crop: false,
@@ -109,7 +109,7 @@ gulp.task('thumbnail', function() {
 
 // Cachebust
 gulp.task('cachebust', function() {
-	gulp.src([dirs.src + '/views/**/*.php'])
+	return gulp.src([dirs.src + '/views/**/*.php'])
 		.pipe(plugins.consolidate('lodash', {
 			timestamp: Date.now()
 		}))
