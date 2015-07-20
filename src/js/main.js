@@ -3,6 +3,13 @@ $('#auth').change(function() {
 	if($(this).val() == '') $(this).removeClass('invalid').addClass('validate');
 });
 
+// Detect auth input changes
+$('#auth').bind('change paste keyup', function() {
+	var input = $(this).val();
+	(input != '') ? $('label[for=auth]').addClass('active') : $('label[for=auth]').removeClass('active');
+});
+
+
 $(document).ready(function() {
 
 	// init isotope
