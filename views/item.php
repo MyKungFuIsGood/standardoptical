@@ -7,7 +7,7 @@ $year			= strtolower(array_pop($path));
 $category	= strtolower(array_pop($path));
 
 $path = getcwd() . '/media/' . $category . '/' . $year . '/' . $file . '.*';
-preg_match('/\.[^\.]+$/i', glob($path)[0], $type);
+preg_match('/\.[^\.]+$/i', array_pop(glob($path)), $type);
 $type = $type[0];
 
 ?>

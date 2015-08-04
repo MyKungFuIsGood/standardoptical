@@ -9,7 +9,7 @@ $categories = array_diff(scandir($path, 0), array('.', '..'));
 		<div class="grid">
 			<?php foreach($categories as $category) : ?>
 				<?php if(is_dir($path . $category)) : ?>
-					<div class="grid-item col s12 m6 l4">
+					<div class="grid-item col s6 m6 l4">
 						<a href="<?php echo '/portfolio/' . $category; ?>">
 							<div class="card hoverable">
 								<div class="card-image">

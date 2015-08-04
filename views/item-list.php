@@ -13,7 +13,13 @@ $years = array_pref_diff(scandir($path, 1), '/^\.|-thumb/');
 $thumbs = array();
 foreach($years as $year) {
 	if(is_dir( $path . '/' . $year)) {
+		// glob files
 		$files = array_pref_diff(scandir($path . '/' . $year, 0), '/^\.|-thumb/');
+		// check if we have mp4's
+		if(!empty(preg_grep('/\.mp4/', $files))) {
+			// if we do remake file glob with only mp4's and ignore jpg's
+			$files = array_pref_diff(scandir($path . '/' . $year, 0), '/^\.|-thumb|\.jpg/');
+		}
 		$tmp = array('year' => $year, 'file' => $files);
 		array_push($thumbs, $tmp);
 	}
