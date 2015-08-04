@@ -62,7 +62,7 @@ function array_pref_diff($a, $p) {
 								$type = $type[0];
 							?>
 							<?php $file = preg_replace('/\\.[^.\\s]{3,4}$/', '', $file); ?>
-							<div class="grid-item year-<?php echo $dir['year']; ?> col s12 m6 l3">
+							<div class="grid-item year-<?php echo $dir['year']; ?> col s6 m6 l3">
 								<a href="<?php echo '/portfolio/' .  $category . '/' . $dir['year'] . '/' . $file; ?>">
 									<div class="card hoverable">
 										<div class="card-image">
