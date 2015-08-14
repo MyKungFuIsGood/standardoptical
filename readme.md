@@ -19,12 +19,24 @@ http://www.imagemagick.org/script/binary-releases.php
 
 ---
 
-To get started run:
+# To get started run:
 ```
 $ npm install
 $ gulp init
 // grab media directory from source (whereever it is living now)
 $ gulp thumbnail
+```
+
+### Don't forget to create a ./media dir and get your media in that folder in the stucture
+```
+./media/
+	{type}/
+		category.jpg
+		{years, 2015 etc.}/
+			{item}.jpg
+			-or- (videos must be accompanied by a jpg for their poster)
+			{item}.jpg
+			{item}.mp4
 ```
 
 ---
